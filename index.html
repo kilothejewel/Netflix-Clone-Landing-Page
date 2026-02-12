@@ -1,186 +1,121 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Netflix Clone</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Zaio — Netflix-style landing page assignment">
+    <title>Zaio — Netflix Style Landing</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Simple SVG favicon included in the repo -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
+
+<!-- Header / Hero -->
 <header class="hero">
-    <div class="hero-bg-image"></div>
     <div class="overlay"></div>
-    <nav class="navbar">
-        <svg class="logo" viewBox="0 0 111 30" fill="#e50914" xmlns="http://www.w3.org/2000/svg">
-            <path d="M105.062 14.28L111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.376-5.031-.595l6.031-13.75L94.468 0h5.063l3.062 7.874L105.875 0h4.906l-5.719 14.28zM90.47 0h-4.594v27.25c1.5.094 3.062.156 4.594.343V0zm-8.563 26.937c-4.187-.281-8.375-.53-12.656-.625V0h4.687v21.875c2.687.062 5.375.28 7.969.405v4.657zM64.25 10.657v4.687h-6.406V26H53.22V0h13.125v4.687h-8.5v5.97h6.406zm-18.969 0v4.875h-7.563c-.25-2.031-.624-3.875-1.124-5.25l-2.094 4.157-1.469-3.219 2.156-4.25V24.594c2.25-.156 4.532-.344 6.938-.594V28.75c-4.657.437-9.376.906-14.438 1.437V14.843l-1.562 3.126-2.594-5.407 3.375-6.593-2.188-5.313 5.313 1.25 1.563 3.657L31.5 0h4.812v12.062c3.438-1.53 7.032-2.874 10.657-4.03V2.406l4.312 1.22v4.25c-.75.218-1.5.437-2.25.686zm-24.906 15.657c-2.313.312-4.657.624-6.907.968V4.718c-2.094.5-4.156 1.094-6.187 1.782V1.593C10.53.687 14.218.156 17.656 0v26.313zM6.906 5.563C4.531 6.375 2.25 7.375 0 8.562V3.469C2.312 2.125 4.625 1.031 6.906 0v5.563z"></path>
-        </svg>
-        <a href="#" class="btn-singin">Sign In</a>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <a href="#" class="logo-wrap" aria-label="Zaio home">
+            <img src="images/netflix-logo.png" class="img-netflixIcon" alt="Zaio logo">
+        </a>
+        <a href="#" class="btn-signin">Sign In</a>
     </nav>
+
     <div class="hero-content">
-    <h1>Unlimited movies, TV shows and more</h1>
-    <p>Watch anywhere. Cancel anytime.</p>
+        <h1>Unlimited movies, TV shows and more.</h1>
+        <p class="tagline">Watch anywhere. Cancel anytime.</p>
         <p class="ready-text">Ready to watch? Enter your email to create or restart your membership.</p>
-        <form class="email-form">
-            <div class="input-container">
-            <input type="email" placeholder="Email address" required>
-                <label for="email-hero">Email address</label>
-            </div>
-            <button type="submit">Get Started</button>
+
+        <form class="email-form" aria-label="Get started email form">
+            <label class="sr-only" for="email-hero">Email address</label>
+            <input id="email-hero" type="email" placeholder="Email address" required>
+            <button type="submit" class="cta">Get Started</button>
         </form>
     </div>
 </header>
-<div class="curve-container">
-    <div class="curve"></div>
-</div>
-</header>
 
-<section class="section-container trending">
-    <h2>Trending Now</h2>
-
-    <div class="movie-scroller">
-        <div class="movie-card">
-            <span class="rank">1</span>
-            <img src="https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg" alt="Movie 1">
+<main>
+    <!-- Trending Section -->
+    <section class="section-container trending" aria-labelledby="trending-heading">
+        <h2 id="trending-heading">Trending Now</h2>
+        <div class="movie-scroller" aria-hidden="false">
+            <div class="movie-card"><span class="rank">1</span><img src="https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg" alt="Movie 1"></div>
+            <div class="movie-card"><span class="rank">2</span><img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Movie 2"></div>
+            <div class="movie-card"><span class="rank">3</span><img src="https://image.tmdb.org/t/p/w500/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg" alt="Movie 3"></div>
+            <div class="movie-card"><span class="rank">4</span><img src="https://image.tmdb.org/t/p/w500/qrY95997hKwAheKFRPddubVe2mL.jpg" alt="Movie 4"></div>
+            <div class="movie-card"><span class="rank">5</span><img src="https://image.tmdb.org/t/p/w500/ggZGnJLzO3BTu7ysJDkAjtHZvPr.jpg" alt="Movie 5"></div>
         </div>
-        <div class="movie-card">
-            <span class="rank">2</span>
-            <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Movie 2">
+    </section>
+
+    <!-- Video section (trailer) -->
+    <section class="video-section" aria-labelledby="trailer-heading">
+        <h2 id="trailer-heading">Zaio Trailer</h2>
+        <video controls poster="" class="trailer">
+            <!-- Public sample video (Big Buck Bunny) -->
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Reasons / Features -->
+    <section class="section-container reasons" aria-labelledby="reasons-heading">
+        <h2 id="reasons-heading">More Reasons to Join</h2>
+        <div class="reasons-grid">
+            <div class="reason-card"><h3>Enjoy on your TV</h3><p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p><div class="icon-placeholder">📺</div></div>
+            <div class="reason-card"><h3>Download your shows</h3><p>Save your favorites easily and always have something to watch offline.</p><div class="icon-placeholder">⬇️</div></div>
+            <div class="reason-card"><h3>Watch everywhere</h3><p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p><div class="icon-placeholder">📱</div></div>
+            <div class="reason-card"><h3>Create profiles for kids</h3><p>Send kids on adventures with their favorite characters in a space made just for them.</p><div class="icon-placeholder">🧒</div></div>
         </div>
-        <div class="movie-card">
-            <span class="rank">3</span>
-            <img src="https://image.tmdb.org/t/p/w500/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg" alt="Movie 3">
-        </div>
-        <div class="movie-card">
-            <span class="rank">4</span>
-            <img src="https://image.tmdb.org/t/p/w500/qrY95997hKwAheKFRPddubVe2mL.jpg" alt="Movie 4">
-        </div>
-        <div class="movie-card">
-            <span class="rank">5</span>
-            <img src="https://image.tmdb.org/t/p/w500/ggZGnJLzO3BTu7ysJDkAjtHZvPr.jpg" alt="Movie 5">
-        <!doctype html>
-        <html lang="en">
-        <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <meta name="description" content="Zaio — Netflix-style landing page assignment">
-            <title>Zaio — Netflix Style Landing</title>
-            <!-- Google Fonts -->
-            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="styles.css">
-            <!-- Simple SVG favicon included in the repo -->
-            <link rel="icon" href="favicon.svg" type="image/svg+xml">
-        </head>
-        <body>
+    </section>
 
-        <!-- Header / Hero -->
-        <header class="hero">
-            <div class="overlay"></div>
-            <nav class="navbar" role="navigation" aria-label="Main navigation">
-                <div class="logo-wrap">
-                    <!-- Netflix-like 'N' logo as inline SVG -->
-                    <svg class="logo" viewBox="0 0 111 30" fill="#e50914" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M105.062 14.28L111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.376-5.031-.595l6.031-13.75L94.468 0h5.063l3.062 7.874L105.875 0h4.906l-5.719 14.28zM90.47 0h-4.594v27.25c1.5.094 3.062.156 4.594.343V0z"/>
-                    </svg>
-                </div>
-                <a href="#" class="btn-signin">Sign In</a>
-            </nav>
+    <!-- FAQ Section (collapsible using details/summary) -->
+    <section class="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
 
-            <div class="hero-content">
-                <h1>Unlimited movies, TV shows and more.</h1>
-                <p class="tagline">Watch anywhere. Cancel anytime.</p>
-                <p class="ready-text">Ready to watch? Enter your email to create or restart your membership.</p>
+        <details>
+            <summary>What is Zaio (Netflix clone)?</summary>
+            <p>Zaio is a learning project — a Netflix-style landing page built with HTML and CSS for demonstration.</p>
+        </details>
 
-                <form class="email-form" aria-label="Get started email form">
-                    <label class="sr-only" for="email-hero">Email address</label>
-                    <input id="email-hero" type="email" placeholder="Email address" required>
-                    <button type="submit" class="cta">Get Started</button>
-                </form>
-            </div>
-        </header>
+        <details>
+            <summary>How much does it cost?</summary>
+            <p>This project is a template; pricing would depend on the real service plans.</p>
+        </details>
 
-        <main>
-            <!-- Trending Section -->
-            <section class="section-container trending" aria-labelledby="trending-heading">
-                <h2 id="trending-heading">Trending Now</h2>
-                <div class="movie-scroller" aria-hidden="false">
-                    <div class="movie-card"><span class="rank">1</span><img src="https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg" alt="Movie 1"></div>
-                    <div class="movie-card"><span class="rank">2</span><img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Movie 2"></div>
-                    <div class="movie-card"><span class="rank">3</span><img src="https://image.tmdb.org/t/p/w500/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg" alt="Movie 3"></div>
-                    <div class="movie-card"><span class="rank">4</span><img src="https://image.tmdb.org/t/p/w500/qrY95997hKwAheKFRPddubVe2mL.jpg" alt="Movie 4"></div>
-                    <div class="movie-card"><span class="rank">5</span><img src="https://image.tmdb.org/t/p/w500/ggZGnJLzO3BTu7ysJDkAjtHZvPr.jpg" alt="Movie 5"></div>
-                </div>
-            </section>
+        <details>
+            <summary>Where can I watch?</summary>
+            <p>Watch anywhere — on your phone, tablet, laptop, or TV with internet access.</p>
+        </details>
 
-            <!-- Video section (trailer) -->
-            <section class="video-section" aria-labelledby="trailer-heading">
-                <h2 id="trailer-heading">Trailer</h2>
-                <video controls poster="" class="trailer">
-                    <!-- Public sample video (Big Buck Bunny) -->
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </section>
+        <details>
+            <summary>How do I get started?</summary>
+            <p>Enter your email in the Get Started form at the top and follow the on-screen steps.</p>
+        </details>
+    </section>
+</main>
 
-            <!-- Reasons / Features -->
-            <section class="section-container reasons" aria-labelledby="reasons-heading">
-                <h2 id="reasons-heading">More Reasons to Join</h2>
-                <div class="reasons-grid">
-                    <div class="reason-card"><h3>Enjoy on your TV</h3><p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p><div class="icon-placeholder">📺</div></div>
-                    <div class="reason-card"><h3>Download your shows</h3><p>Save your favorites easily and always have something to watch offline.</p><div class="icon-placeholder">⬇️</div></div>
-                    <div class="reason-card"><h3>Watch everywhere</h3><p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p><div class="icon-placeholder">📱</div></div>
-                    <div class="reason-card"><h3>Create profiles for kids</h3><p>Send kids on adventures with their favorite characters in a space made just for them.</p><div class="icon-placeholder">🧒</div></div>
-                </div>
-            </section>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-top">
+        <p class="ready-text">Ready to watch? Enter your email to create or restart your membership.</p>
+        <form class="footer-email-form"><input type="email" placeholder="Email address" required><button type="submit">Get Started</button></form>
+    </div>
 
-            <!-- FAQ Section (collapsible using details/summary) -->
-            <section class="faq" aria-labelledby="faq-heading">
-                <h2 id="faq-heading">Frequently Asked Questions</h2>
+    <p class="questions">Questions? Call 0800 100 046</p>
 
-                <details>
-                    <summary>What is Netflix clone?</summary>
-                    <p>Zaio is a learning project — a Netflix-style landing page built with HTML and CSS for demonstration.</p>
-                </details>
+    <div class="footer-links">
+        <ul><li><a href="#">FAQ</a></li><li><a href="#">Help Center</a></li><li><a href="#">Account</a></li><li><a href="#">Media Center</a></li></ul>
+        <ul><li><a href="#">Investor Relations</a></li><li><a href="#">Jobs</a></li><li><a href="#">Ways to Watch</a></li><li><a href="#">Terms of Use</a></li></ul>
+        <ul><li><a href="#">Privacy</a></li><li><a href="#">Cookie Preferences</a></li><li><a href="#">Corporate Information</a></li><li><a href="#">Contact Us</a></li></ul>
+    </div>
 
-                <details>
-                    <summary>How much does it cost?</summary>
-                    <p>This project is a template; pricing would depend on the real service plans.</p>
-                </details>
+    <div class="language-select"><select><option>English</option></select></div>
+    <p class="country">Zaio — South Africa</p>
 
-                <details>
-                    <summary>Where can I watch?</summary>
-                    <p>Watch anywhere — on your phone, tablet, laptop, or TV with internet access.</p>
-                </details>
+    <p class="recaptcha">This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="#">Learn more.</a></p>
+</footer>
 
-                <details>
-                    <summary>How do I get started?</summary>
-                    <p>Enter your email in the Get Started form at the top and follow the on-screen steps.</p>
-                </details>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-top">
-                <p class="ready-text">Ready to watch? Enter your email to create or restart your membership.</p>
-                <form class="footer-email-form"><input type="email" placeholder="Email address" required><button type="submit">Get Started</button></form>
-            </div>
-
-            <p class="questions">Questions? Call 0800 100 046</p>
-
-            <div class="footer-links">
-                <ul><li><a href="#">FAQ</a></li><li><a href="#">Help Center</a></li><li><a href="#">Account</a></li><li><a href="#">Media Center</a></li></ul>
-                <ul><li><a href="#">Investor Relations</a></li><li><a href="#">Jobs</a></li><li><a href="#">Ways to Watch</a></li><li><a href="#">Terms of Use</a></li></ul>
-                <ul><li><a href="#">Privacy</a></li><li><a href="#">Cookie Preferences</a></li><li><a href="#">Corporate Information</a></li><li><a href="#">Contact Us</a></li></ul>
-            </div>
-
-            <div class="language-select"><select><option>English</option></select></div>
-            <p class="country">Zaio — South Africa</p>
-
-            <p class="recaptcha">This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="#">Learn more.</a></p>
-        </footer>
-
-        </body>
-        </html>
+</body>
+</html>

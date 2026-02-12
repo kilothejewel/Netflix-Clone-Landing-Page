@@ -1,3 +1,20 @@
+/**
+ * Stylesheet for Zaio — Netflix-style landing page
+ *
+ * HERO IMAGE:
+ * - By default the hero uses `images/hero.jpg` (relative to project root).
+ * - To replace the hero image drop your image at: ./images/hero.jpg
+ *   or edit the `background` in the `.hero` rule below and paste a public URL.
+ * Examples:
+ *  - Local file (recommended): images/hero.jpg
+ *  - Direct URL: url('https://example.com/your-hero.jpg')
+ *
+ * Quick download example (Linux/macOS):
+ *   mkdir -p images
+ *   curl -L "<IMAGE_URL>" -o images/hero.jpg
+ * Then refresh the page.
+ */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap');
 
 :root{
@@ -20,39 +37,64 @@ body{
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 .hero{
-  position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;padding:4rem 1rem 6rem;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+  position:relative;
+  min-height:92vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:6rem 1rem 6rem;
+  /* HERO BACKGROUND
+     - Primary (local): ./images/hero.jpg
+     - Fallback (public): Unsplash cinematic image (used when local file is missing)
+     To use your own online image, replace the fallback URL or drop a file at ./images/hero.jpg
+  */
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('https://media.geeksforgeeks.org/wp-content/uploads/20240313102506/NetlfixHome-min.jpeg'), url('images/hero.jpg'), url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
 }
-.overlay{position:absolute;inset:0;pointer-events:none}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35);pointer-events:none}
 
-.navbar{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1200px;padding:1rem}
-.logo{width:120px;height:auto}
+/* Navbar sits on top of hero */
+.navbar{position:absolute;top:0;left:0;right:0;z-index:8;display:flex;align-items:center;justify-content:space-between;max-width:1200px;padding:1.25rem 1rem;margin:0 auto}
+.logo-wrap{display:inline-block;background:rgba(0,0,0,0.35);padding:6px 8px;border-radius:6px}
+.logo{width:160px;height:auto;display:block;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.6))}
+.img-netflixIcon{display:block;width:140px;height:auto}
 .btn-signin{background:var(--accent);color:var(--white);padding:.5rem 1rem;border-radius:4px;text-decoration:none;font-weight:700}
 .btn-signin:hover{opacity:.95;transform:translateY(-1px)}
 
-.hero-content{position:relative;z-index:2;text-align:center;max-width:800px;padding:2rem}
-.hero-content h1{font-family:'Montserrat',sans-serif;font-size:2.6rem;line-height:1.05;margin-bottom:.6rem}
-.tagline{color:var(--muted);margin-bottom:1rem}
-.ready-text{margin-bottom:1.2rem}
+.hero-content{position:relative;z-index:6;text-align:center;max-width:900px;padding:2rem 1rem}
+.hero-content h1{font-family:'Montserrat',sans-serif;font-size:4rem;line-height:1.02;margin-bottom:.6rem;font-weight:900}
+.tagline{color:var(--muted);margin-bottom:.6rem;font-size:1.1rem}
+.ready-text{margin-bottom:1rem;color:rgba(255,255,255,0.85)}
 
-.email-form{display:flex;gap:.6rem;justify-content:center;align-items:center}
-.email-form input{padding:14px 16px;border-radius:4px;border:none;width:320px;font-size:16px}
-.email-form .cta{background:var(--accent);color:var(--white);padding:14px 20px;border:none;border-radius:4px;cursor:pointer;font-weight:700}
+.email-form{display:flex;gap:.6rem;justify-content:center;align-items:center;margin-top:1rem}
+.email-form input{padding:16px 18px;border-radius:4px;border:1px solid rgba(255,255,255,0.12);width:520px;background:rgba(0,0,0,0.45);color:var(--white);font-size:16px}
+.email-form input::placeholder{color:rgba(255,255,255,0.7)}
+.email-form .cta{background:var(--accent);color:var(--white);padding:14px 26px;border:none;border-radius:4px;cursor:pointer;font-weight:700;display:inline-flex;align-items:center;gap:.5rem}
+.email-form .cta::after{content:'›';font-weight:700;margin-left:6px}
 .email-form .cta:hover{filter:brightness(.95)}
 
 .section-container{padding:4rem 1rem}
 .section-container h2{font-family:'Montserrat',sans-serif;text-align:left;max-width:1200px;margin:0 auto 1rem;padding:0 1rem}
 
-.movie-scroller{display:flex;gap:1rem;overflow-x:auto;padding:1rem;scroll-behavior:smooth}
-.movie-card{min-width:160px;background:transparent;border-radius:6px;position:relative}
-.movie-card img{width:100%;height:auto;border-radius:6px;display:block}
-.rank{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.6);padding:4px 8px;border-radius:4px;color:var(--white);font-weight:700}
+.movie-scroller{display:flex;gap:2rem;overflow-x:auto;padding:1.2rem 1rem;scroll-behavior:smooth;align-items:flex-end}
+.movie-card{min-width:220px;max-width:260px;background:transparent;border-radius:10px;position:relative}
+.movie-card img{width:100%;height:360px;object-fit:cover;border-radius:12px;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.6);transition:transform .28s ease}
+.movie-card:hover img{transform:translateY(-6px) scale(1.03)}
+/* big outlined rank (like Netflix) */
+.rank{position:absolute;left:12px;bottom:10px;font-size:96px;line-height:1;color:transparent;-webkit-text-stroke:3px rgba(255,255,255,0.98);font-weight:900;pointer-events:none}
+
 
 .video-section{text-align:center;padding:2rem 1rem}
 .trailer{max-width:900px;width:100%;border-radius:6px}
 
-.reasons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:1200px;margin:0 auto;padding:0 1rem}
-.reason-card{background:var(--card);padding:1.2rem;border-radius:6px}
-.icon-placeholder{margin-top:1rem;font-size:26px}
+.reasons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;max-width:1200px;margin:0 auto;padding:0 1rem}
+.reason-card{position:relative;padding:2rem;border-radius:18px;min-height:220px;color:var(--white);overflow:hidden;background:linear-gradient(180deg,#2b0736 0%, #4a0f6e 60%);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+.reason-card h3{font-family:'Montserrat',sans-serif;margin-bottom:.6rem}
+.reason-card p{color:rgba(255,255,255,0.85);font-size:0.95rem}
+.icon-placeholder{position:absolute;right:18px;bottom:18px;font-size:34px;opacity:0.95}
+
 
 .faq{background:linear-gradient(#0b0b0b,#0f0f0f);padding:3rem 1rem}
 .faq h2{text-align:center;margin-bottom:1.2rem}
@@ -75,10 +117,19 @@ details[open] summary::after{content:'−'}
 .footer-links a:hover{text-decoration:underline}
 
 @media (max-width:900px){
-  .hero-content h1{font-size:1.8rem}
-  .email-form{flex-direction:column;align-items:stretch}
-  .email-form input{width:100%}
+  .hero-content h1{font-size:2.6rem}
+  .email-form{flex-direction:column;align-items:center}
+  .email-form input{width:320px}
+  .email-form .cta{width:100%;max-width:320px}
   .btn-signin{padding:.4rem .8rem}
+}
+
+@media (max-width:480px){
+  .logo{width:110px}
+  .logo-wrap{padding:4px 6px}
+  .movie-card img{height:220px}
+  .hero-content h1{font-size:1.6rem}
+  .email-form input{width:100%}
 }
 
 @media (max-width:480px){
