@@ -11,26 +11,83 @@
 </head>
 <body>
 <header class="hero">
+    <div class="hero-bg-image"></div>
     <div class="overlay"></div>
     <nav class="navbar">
-        <img src="images/netflix-logo.png" alt="Netflix Logo" class="logo">
+        <svg class="logo" viewBox="0 0 111 30" fill="#e50914" xmlns="http://www.w3.org/2000/svg">
+            <path d="M105.062 14.28L111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.376-5.031-.595l6.031-13.75L94.468 0h5.063l3.062 7.874L105.875 0h4.906l-5.719 14.28zM90.47 0h-4.594v27.25c1.5.094 3.062.156 4.594.343V0zm-8.563 26.937c-4.187-.281-8.375-.53-12.656-.625V0h4.687v21.875c2.687.062 5.375.28 7.969.405v4.657zM64.25 10.657v4.687h-6.406V26H53.22V0h13.125v4.687h-8.5v5.97h6.406zm-18.969 0v4.875h-7.563c-.25-2.031-.624-3.875-1.124-5.25l-2.094 4.157-1.469-3.219 2.156-4.25V24.594c2.25-.156 4.532-.344 6.938-.594V28.75c-4.657.437-9.376.906-14.438 1.437V14.843l-1.562 3.126-2.594-5.407 3.375-6.593-2.188-5.313 5.313 1.25 1.563 3.657L31.5 0h4.812v12.062c3.438-1.53 7.032-2.874 10.657-4.03V2.406l4.312 1.22v4.25c-.75.218-1.5.437-2.25.686zm-24.906 15.657c-2.313.312-4.657.624-6.907.968V4.718c-2.094.5-4.156 1.094-6.187 1.782V1.593C10.53.687 14.218.156 17.656 0v26.313zM6.906 5.563C4.531 6.375 2.25 7.375 0 8.562V3.469C2.312 2.125 4.625 1.031 6.906 0v5.563z"></path>
+        </svg>
         <a href="#" class="btn-singin">Sign In</a>
     </nav>
     <div class="hero-content">
     <h1>Unlimited movies, TV shows and more</h1>
     <p>Watch anywhere. Cancel anytime.</p>
+        <p class="ready-text">Ready to watch? Enter your email to create or restart your membership.</p>
         <form class="email-form">
+            <div class="input-container">
             <input type="email" placeholder="Email address" required>
+                <label for="email-hero">Email address</label>
+            </div>
             <button type="submit">Get Started</button>
         </form>
     </div>
 </header>
-<section class="video-section">
-    <h2>Watch the Trailer</h2>
-    <video controls width="600">
-        <source src="videos/trailer.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<div class="curve-container">
+    <div class="curve"></div>
+</div>
+</header>
+
+<section class="section-container trending">
+    <h2>Trending Now</h2>
+
+    <div class="movie-scroller">
+        <div class="movie-card">
+            <span class="rank">1</span>
+            <img src="https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg" alt="Movie 1">
+        </div>
+        <div class="movie-card">
+            <span class="rank">2</span>
+            <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Movie 2">
+        </div>
+        <div class="movie-card">
+            <span class="rank">3</span>
+            <img src="https://image.tmdb.org/t/p/w500/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg" alt="Movie 3">
+        </div>
+        <div class="movie-card">
+            <span class="rank">4</span>
+            <img src="https://image.tmdb.org/t/p/w500/qrY95997hKwAheKFRPddubVe2mL.jpg" alt="Movie 4">
+        </div>
+        <div class="movie-card">
+            <span class="rank">5</span>
+            <img src="https://image.tmdb.org/t/p/w500/ggZGnJLzO3BTu7ysJDkAjtHZvPr.jpg" alt="Movie 5">
+        </div>
+    </div>
+</section>
+
+<section class="section-container reasons">
+    <h2>More Reasons to Join</h2>
+    <div class="reasons-grid">
+        <div class="reason-card">
+            <h3>Enjoy on your TV</h3>
+            <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+            <div class="icon-placeholder">📺</div>
+        </div>
+        <div class="reason-card">
+            <h3>Download your shows to watch offline</h3>
+            <p>Save your favorites easily and always have something to watch.</p>
+            <div class="icon-placeholder">⬇️</div>
+        </div>
+        <div class="reason-card">
+            <h3>Watch everywhere</h3>
+            <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+            <div class="icon-placeholder">🔭</div>
+        </div>
+        <div class="reason-card">
+            <h3>Create profiles for kids</h3>
+            <p>Send kids on adventures with their favorite characters in a space made just for them — free with your membership.</p>
+            <div class="icon-placeholder">😊</div>
+        </div>
+    </div>
 </section>
 <section class="faq">
     <h2>Frequently Asked Questions</h2>
