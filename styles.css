@@ -1,20 +1,3 @@
-/**
- * Stylesheet for Zaio — Netflix-style landing page
- *
- * HERO IMAGE:
- * - By default the hero uses `images/hero.jpg` (relative to project root).
- * - To replace the hero image drop your image at: ./images/hero.jpg
- *   or edit the `background` in the `.hero` rule below and paste a public URL.
- * Examples:
- *  - Local file (recommended): images/hero.jpg
- *  - Direct URL: url('https://example.com/your-hero.jpg')
- *
- * Quick download example (Linux/macOS):
- *   mkdir -p images
- *   curl -L "<IMAGE_URL>" -o images/hero.jpg
- * Then refresh the page.
- */
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap');
 
 :root{
@@ -43,11 +26,6 @@ body{
   align-items:center;
   justify-content:center;
   padding:6rem 1rem 6rem;
-  /* HERO BACKGROUND
-     - Primary (local): ./images/hero.jpg
-     - Fallback (public): Unsplash cinematic image (used when local file is missing)
-     To use your own online image, replace the fallback URL or drop a file at ./images/hero.jpg
-  */
   background-image: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('https://media.geeksforgeeks.org/wp-content/uploads/20240313102506/NetlfixHome-min.jpeg'), url('images/hero.jpg'), url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1600&q=80');
   background-size: cover, cover, cover;
   background-position: center, center, center;
@@ -55,11 +33,9 @@ body{
 }
 .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35);pointer-events:none}
 
-/* Navbar sits on top of hero */
 .navbar{position:absolute;top:0;left:0;right:0;z-index:8;display:flex;align-items:center;justify-content:space-between;max-width:1200px;padding:1.25rem 1rem;margin:0 auto}
 .logo-wrap{display:inline-block;background:rgba(0,0,0,0.35);padding:6px 8px;border-radius:6px}
-.logo{width:160px;height:auto;display:block;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.6))}
-.img-netflixIcon{display:block;width:140px;height:auto}
+.img-netflixIcon{display:block;width:160px;height:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.6))}
 .btn-signin{background:var(--accent);color:var(--white);padding:.5rem 1rem;border-radius:4px;text-decoration:none;font-weight:700}
 .btn-signin:hover{opacity:.95;transform:translateY(-1px)}
 
@@ -125,16 +101,12 @@ details[open] summary::after{content:'−'}
 }
 
 @media (max-width:480px){
-  .logo{width:110px}
+  .img-netflixIcon{width:100px}
   .logo-wrap{padding:4px 6px}
   .movie-card img{height:220px}
+  .movie-card{min-width:120px}
   .hero-content h1{font-size:1.6rem}
   .email-form input{width:100%}
-}
-
-@media (max-width:480px){
-  .logo{width:100px}
-  .movie-card{min-width:120px}
   details{width:95%}
 }
 
